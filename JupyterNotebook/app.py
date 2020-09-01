@@ -42,9 +42,9 @@ def welcome():
         f"<br>"
         f"<a href='/api/v1.0/tobs'>Most active Station TOBS Data</a>"
         f"<br>"
-        f"<a href='/api/v1.0/<start>'>Enter Start Date (YearMonthDay) for MIN, MAX and AVG Temperatures</a>"
+        # f"<a href='/api/v1.0/<start>'>Enter Start Date (Year-Month-Day) for MIN, MAX and AVG Temperatures</a>"
         f"<br>"
-        f"<a href='/api/v1.0/<start>/<end>'>Enter Start and End Date (YearMonthDay) for MIN, MAX and AVG Temperatures</a>"
+        # f"<a href='/api/v1.0/<start>/<end>'>Enter Start and End Date (YearMonthDay) for MIN, MAX and AVG Temperatures</a>"
 
 
     )
@@ -159,9 +159,68 @@ def tobs():
     return jsonify(all_results)
 
 
+# @app.route("/api/v1.0/<start>")
+# def start_date(start):
+#     """Fetch the Date that matches
+#        the path variable supplied by the user, or a 404 if not."""
+
+#     # Create session link for Python to DB
+#     session = Session(engine)
+
+#     # start = ('2017-05-03')
+#     results = session.query(Measurement.date, func.min(Measurement.tobs), func.max(Measurement.tobs),\
+#                             func.avg(Measurement.tobs)).filter(Measurement.date >= start).all()
+#     #results 
+
+#     canonicalized = start
+#     for date in results:
+#         search_term = date[0]
+#         print(date[0])
+        
+#         if search_term == canonicalized:
+#             start_stats = []
+#             start_stats.append(date[1])
+#             start_stats.append(date[2])
+#             start_stats.append(date[3])
+
+#             if search_term == canonicalized:
+#                 return jsonify(start_stats)
+
+#     session.close()
+
+#     return jsonify({"error": "Date not found."}), 404
 
 
+# @app.route("/api/v1.0/<start>/<end>")
+# def start_end(start, end):
+#     """Fetch the start and end Date that matches
+#        the path variable supplied by the user, or a 404 if not."""
 
+#     # Create session link for Python to DB
+#     session = Session(engine)
+
+#     # start = ('2017-05-03')
+#     results = session.query(Measurement.date, func.min(Measurement.tobs), func.max(Measurement.tobs),\
+#                             func.avg(Measurement.tobs)).filter(Measurement.date == start).all()
+#     #results 
+
+#     canonicalized = start
+#     for date in results:
+#         search_term = date[0]
+#         print(date[0])
+        
+#         if search_term == canonicalized:
+#             start_stats = []
+#             start_stats.append(date[1])
+#             start_stats.append(date[2])
+#             start_stats.append(date[3])
+
+#             if search_term == canonicalized:
+#                 return jsonify(start_stats)
+
+#     session.close()
+
+#     return jsonify({"error": "Date not found."}), 404
 
 
 
