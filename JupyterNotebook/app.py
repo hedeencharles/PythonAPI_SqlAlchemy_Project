@@ -42,9 +42,9 @@ def welcome():
         f"<br>"
         f"<a href='/api/v1.0/tobs'>Most active Station TOBS Data</a>"
         f"<br>"
-        f"<a href='/api/v1.0/<start>'>Enter Start Date (year/month/day) for MIN, MAX and AVG Temperatures</a>"
+        f"<a href='/api/v1.0/<start>'>Enter Start Date (YearMonthDay) for MIN, MAX and AVG Temperatures</a>"
         f"<br>"
-        f"<a href='/api/v1.0/<start>/<end>'>Enter Start and End Date (year/month/day) for MIN, MAX and AVG Temperatures</a>"
+        f"<a href='/api/v1.0/<start>/<end>'>Enter Start and End Date (YearMonthDay) for MIN, MAX and AVG Temperatures</a>"
 
 
     )
@@ -93,7 +93,7 @@ def stations():
 
     all_results = []
     for item in results:
-        all_results.append(item)
+        all_results.append(item[0])
     # all_results
 
     return jsonify(all_results)
@@ -151,8 +151,10 @@ def tobs():
 
     all_results = []
     for item in tobs_results:
-        all_results.append(item)
+        all_results.append(item[2])
     # all_results
+
+    # all_results = list(np.ravel(tobs_results))
 
     return jsonify(all_results)
 
