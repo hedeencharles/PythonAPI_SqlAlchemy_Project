@@ -34,7 +34,7 @@ app = Flask(__name__)
 @app.route("/")
 def welcome():
     return (
-        f"Available Routes:"
+        f"Available Routes:<br/>"
         f"<br>"
         f"<a href='/api/v1.0/precipitation'>Precipitation Data</a>"
         f"<br>"
@@ -46,8 +46,8 @@ def welcome():
         f"<br>"
         # f"<a href='/api/v1.0/<start>/<end>'>Enter Start and End Date (YearMonthDay) for MIN, MAX and AVG Temperatures</a>"
 
-
     )
+
 
 @app.route("/api/v1.0/precipitation")
 def precipitation():
