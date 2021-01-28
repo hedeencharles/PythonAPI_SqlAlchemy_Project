@@ -14,9 +14,9 @@
 <img src="Images/precipitation.png" alt="Precipitation Graph">
 * Design queries to get an idea of the temperature distribution and trends. Generate a box and whisker to visualize the upper and lower bounds. Generate a histogram to visualize the temperature distribution. 
 <img src="Images/temperature.png" alt="Precipitation Graph">
-<img src="Images/station-histogram.png" alt="Precipitation Graph">
+<img src="Images/station-histogram.png" alt="Precipitation Graph" width=600 height=500>
 
-### Develop a live API using Flask : [Flask App Link](https://github.com/hedeencharles/PythonAPI_SqlAlchemy_Project/blob/master/JupyterNotebook/app.py)
+### Develop a live API using Flask : [Flask App Notebook Link](https://github.com/hedeencharles/PythonAPI_SqlAlchemy_Project/blob/master/JupyterNotebook/app.py)
 * Develop a live API using Flask that will display given data from SqLite file.
 * Three available API's:
 <img src="Images/API_options.png" alt="Api Options"> 
